@@ -2,21 +2,37 @@
 var form = document.getElementById('convert');
 var answer = document.getElementById('answer');
 var weightType = 'Weight'; // Initial weight type
+var b = document.getElementById('b');
+var m = document.getElementById('m');
+
+// Event listener for button clicks
+document.getElementById('b').addEventListener('click', switchToBMI);
+document.getElementById('m').addEventListener('click', switchToWeight);
+
+function switchToBMI(){
+
+    weightType = 'Weight';
+    weight.innerHTML = 'Weight';
+    var kginput = document.getElementById('kg');
+    kginput.setAttribute('placeholder', 'kg');
+}
+function switchToWeight(){
+    weightType = 'BMI';
+        weight.innerHTML = 'BMI';
+        var kginput = document.getElementById('kg');
+        kginput.setAttribute('placeholder', 'BMI');
+}
+
 
 document.addEventListener('keydown', function (event) {
     var key = event.code;
     var weight = document.getElementById('weight');
 
     if (key === 'KeyB') {
-        weightType = 'Weight';
-        weight.innerHTML = 'Weight';
-        var kginput = document.getElementById('kg');
-        kginput.setAttribute('placeholder', 'kg');
+        switchToBMI();
+     
     } else if (key === 'KeyM') {
-        weightType = 'BMI';
-        weight.innerHTML = 'BMI';
-        var kginput = document.getElementById('kg');
-        kginput.setAttribute('placeholder', 'BMI');
+        switchToWeight();
     }
 });
 
