@@ -86,3 +86,6 @@ input:active{
 	padding:15px 0;
 	width:100%;
 }
+#button> button{
+    margin: 15px;
+}
