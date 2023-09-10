@@ -18,7 +18,8 @@ header{
 main{
     display: flex;
     justify-content: center;
-    background-color: #3efcf2;
+    background-color: #c4d9eb;
+
 }
 form{
     padding: 2rem;
