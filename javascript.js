@@ -9,26 +9,26 @@ const m = document.getElementById('m');
 const weight = document.getElementById('weight');
 
 // Event listener for button clicks
-document.getElementById('b').addEventListener('click', switchToBMI);
-document.getElementById('m').addEventListener('click', switchToWeight);
+b.addEventListener('click', switchToBMI);
+m.addEventListener('click', switchToWeight);
 
 function switchToBMI() {
 
     weightType = 'Weight';
     weight.innerHTML = 'Weight';
-   let kginput = document.getElementById('kg');
+   const kginput = document.getElementById('kg');
     kginput.setAttribute('placeholder', 'kg');
 }
 function switchToWeight() {
     weightType = 'BMI';
     weight.innerHTML = 'BMI';
-   let kginput = document.getElementById('kg');
+  const kginput = document.getElementById('kg');
     kginput.setAttribute('placeholder', 'BMI');
 }
 
 
 document.addEventListener('keydown', function (event) {
-    let key = event.code;
+    const key = event.code;
  
 
     if (key === 'KeyB') {
@@ -42,14 +42,14 @@ document.addEventListener('keydown', function (event) {
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    let ft = parseFloat(document.getElementById('ft').value) || 0;
-    let inch = parseFloat(document.getElementById('inch').value) || 0;
-    let kg = parseFloat(document.getElementById('kg').value) || 0;
+    const ft = parseFloat(document.getElementById('ft').value) || 0;
+    const inch = parseFloat(document.getElementById('inch').value) || 0;
+    const kg = parseFloat(document.getElementById('kg').value) || 0;
     let height = ((ft * 12 + inch) * 2.54) / 100;
     height = height * height;
 
     if (weightType === 'BMI') {
-        let ans = kg * height;
+        const ans = kg * height;
         if (ans) {
             answer.innerHTML = 'The weight is: ' + ans.toFixed(2);
         } else {
@@ -60,7 +60,7 @@ form.addEventListener('submit', function (event) {
     
     else if (weightType === 'Weight') {
        
-        let bmi = kg / height;
+        const bmi = kg / height;
         if (bmi) {
             answer.innerHTML = 'The BMI is: ' + bmi.toFixed(2);
         } else {
