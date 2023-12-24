@@ -2,7 +2,7 @@
 const form = document.getElementById('convert');
 const answer = document.getElementById('answer');
 
-const weightType = 'Weight'; // Initial weight type
+let weightType = 'Weight'; // Initial weight type
 
 const b = document.getElementById('b');
 const m = document.getElementById('m');
